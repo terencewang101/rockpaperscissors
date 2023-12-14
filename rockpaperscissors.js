@@ -35,16 +35,26 @@ function playRound(playerSelection, computerSelection) {
 }
 // console.log(playRound(playerSelection, computerSelection))
 
+function isGameOver() {
+    if (playerScore + computerScore < 5) {
+        return "no";
+    } else {
+        return "yes";
+    }
+}
+
 function game() {
-    if ((playerScore + computerScore) < 5) {
-        playRound(playerSelection, computerSelection);
-    } else if (playerScore > computerScore) {
+    playRound(playerSelection, computerSelection);
+    playRound(playerSelection, computerSelection);
+    playRound(playerSelection, computerSelection);
+    playRound(playerSelection, computerSelection);
+    playRound(playerSelection, computerSelection);
+    // Announce final score
+    if (playerScore > computerScore) {
         alert(`You beat the computer ${playerScore} to ${computerScore}!`)
     } else if (computerScore > playerScore) {
         alert(`You lost to the computer ${playerScore} to ${computerScore}!`)
-    } else {
-        alert(`It's a tie of ${playerScore} to ${computerScore}!`);
-    }
+    } else alert(`It's a tie of ${playerScore} to ${computerScore}!`);
 }
 game();
 /*
