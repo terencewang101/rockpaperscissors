@@ -1,10 +1,10 @@
 function getComputerChoice() {
     // let x be random number between 0 to 2;
-    let x = Math.floor(Math.random() * 3);
+    let randNum = Math.floor(Math.random() * 3);
     // if x === 0, return "Rock"; else if x === 1, return "Scissors"; else return "Paper"
-    if (x === 0) {
+    if (randNum === 0) {
         return "rock";
-    } else if (x === 1) {
+    } else if (randNum === 1) {
         return "scissors";
     } else return "paper";
 }
@@ -37,7 +37,8 @@ function playRound(playerSelection, computerSelection) {
     }
   }
 function game() {
-    //
+    //Get user to input their choice through a prompt
+
 }
 console.log(playerSelection);
 console.log(computerSelection);
