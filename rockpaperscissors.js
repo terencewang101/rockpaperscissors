@@ -19,17 +19,20 @@ function playRound(playerSelection, computerSelection) {
     if (playerSelection === "rock" && computerSelection === "scissors" ||
     playerSelection === "scissors" && computerSelection === "paper" ||
     playerSelection === "paper" && computerSelection === "rock") {
-        alert(`Computer chose ${computerSelection}. You won!`);
         playerScore++;
+        alert(`Computer chose ${computerSelection}. You won! 
+        Your score is ${playerScore}, computer's score is ${computerScore}`);
         return "win";
     } else if (playerSelection === "rock" && computerSelection === "paper" || 
     playerSelection === "scissors" && computerSelection === "rock" ||
     playerSelection === "paper" && computerSelection === "scissors") {
-        alert(`Computer chose ${computerSelection}. You lost!`)
         computerScore++;
+        alert(`Computer chose ${computerSelection}. You lost! 
+        Your score is ${playerScore}, computer's score is ${computerScore}`)
         return "lose";
     } else {
-        alert(`Computer chose ${computerSelection}. It's a tie!`)
+        alert(`Computer chose ${computerSelection}. It's a tie! 
+        Your score is ${playerScore}, computer's score is ${computerScore}`)
         return "tie";
     }
 }
