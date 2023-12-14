@@ -33,7 +33,6 @@ function playRound(playerSelection, computerSelection) {
         return "tie";
     }
 }
-// console.log(playRound(playerSelection, computerSelection))
 
 function isGameOver() {
     if (playerScore + computerScore < 5) {
@@ -57,82 +56,4 @@ function game() {
     } else alert(`It's a tie of ${playerScore} to ${computerScore}!`);
 }
 game();
-/*
-    //Round 1
-
-    //Get user to input their choice through a prompt
-    playerSelection = prompt("Choose between rock, paper, or scissors!", "").toLowerCase();
-    playRound(playerSelection, computerSelection);
-    // If return value contains "Win", add 1 to playerScore
-    if (playRound(playerSelection, computerSelection) === "win") {
-        playerScore++;
-        alert(`Computer chose ${computerSelection}. You win!`)
-    // If return value contains "Lose", add 1 to computerScore
-    } else if (playRound(playerSelection, computerSelection) === "lose") {
-        computerScore++;
-        alert(`Computer chose ${computerSelection}. You lose!`)
-    // Else announce tie
-    } else alert(`Computer chose ${computerSelection}. It's a tie!`)
-    console.log(playerScore, computerScore);
-
-    //Round 2
-
-    playerSelection = prompt("Choose between rock, paper, or scissors!", "").toLowerCase();
-    playRound(playerSelection, computerSelection);
-    if (playRound(playerSelection, computerSelection) === "win") {
-        playerScore++;
-        alert(`Computer chose ${computerSelection}. You win!`)
-    } else if (playRound(playerSelection, computerSelection) === "lose") {
-        computerScore++;
-        alert(`Computer chose ${computerSelection}. You lose!`)
-    } else alert(`Computer chose ${computerSelection}. It's a tie!`)
-    console.log(playerScore, computerScore);
-
-    //Round 3
-
-    playerSelection = prompt("Choose between rock, paper, or scissors!", "").toLowerCase();
-    playRound(playerSelection, computerSelection);
-    if (playRound(playerSelection, computerSelection) === "win") {
-        playerScore++;
-        alert(`Computer chose ${computerSelection}. You win!`)
-    } else if (playRound(playerSelection, computerSelection) === "lose") {
-        computerScore++;
-        alert(`Computer chose ${computerSelection}. You lose!`)
-    } else alert(`Computer chose ${computerSelection}. It's a tie!`)
-    console.log(playerScore, computerScore);
-
-    //Round 4
-    
-    playerSelection = prompt("Choose between rock, paper, or scissors!", "").toLowerCase();
-    playRound(playerSelection, computerSelection);
-    if (playRound(playerSelection, computerSelection) === "win") {
-        playerScore++;
-        alert(`Computer chose ${computerSelection}. You win!`)
-    } else if (playRound(playerSelection, computerSelection) === "lose") {
-        computerScore++;
-        alert(`Computer chose ${computerSelection}. You lose!`)
-    } else alert(`Computer chose ${computerSelection}. It's a tie!`)
-    console.log(playerScore, computerScore);
-
-    //Round 5
-
-    playerSelection = prompt("Choose between rock, paper, or scissors!", "").toLowerCase();
-    playRound(playerSelection, computerSelection);
-    if (playRound(playerSelection, computerSelection) === "win") {
-        playerScore++;
-        alert(`Computer chose ${computerSelection}. You win!`)
-    } else if (playRound(playerSelection, computerSelection) === "lose") {
-        computerScore++;
-        alert(`Computer chose ${computerSelection}. You lose!`)
-    } else alert(`Computer chose ${computerSelection}. It's a tie!`)
-    console.log(playerScore, computerScore);
-
-    //Announce final score
-    if (playerScore > computerScore) {
-        alert(`You beat the computer ${playerScore} to ${computerScore}!`)
-    } else if (computerScore > playerScore) {
-        alert(`You lost to the computer ${playerScore} to ${computerScore}!`)
-    } else alert(`It's a tie of ${playerScore} to ${computerScore}!`);
-}
-*/
 
