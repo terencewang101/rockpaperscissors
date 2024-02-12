@@ -18,24 +18,23 @@ let computerSelection;
 function playRound(playerSelection, computerSelection) {
     computerSelection = getComputerChoice();
     roundsPlayed++;
-    //playerSelection = prompt("Choose between rock, paper, or scissors!", "").toLowerCase();
     if (playerSelection === "rock" && computerSelection === "scissors" ||
     playerSelection === "scissors" && computerSelection === "paper" ||
     playerSelection === "paper" && computerSelection === "rock") {
         playerScore++;
-        alert(`Computer chose ${computerSelection}. You won! 
-        Your score is ${playerScore}, computer's score is ${computerScore}`);
+        score.textContent = `Computer chose ${computerSelection}. You won! 
+        Your score is ${playerScore}, computer's score is ${computerScore}`
     } else if (playerSelection === "rock" && computerSelection === "paper" || 
     playerSelection === "scissors" && computerSelection === "rock" ||
     playerSelection === "paper" && computerSelection === "scissors") {
         computerScore++;
-        alert(`Computer chose ${computerSelection}. You lost! 
-        Your score is ${playerScore}, computer's score is ${computerScore}`)
+        score.textContent = `Computer chose ${computerSelection}. You lost! 
+        Your score is ${playerScore}, computer's score is ${computerScore}`
     } else {
-        alert(`Computer chose ${computerSelection}. It's a tie! 
-        Your score is ${playerScore}, computer's score is ${computerScore}`)
+        score.textContent = `Computer chose ${computerSelection}. It's a tie! 
+        Your score is ${playerScore}, computer's score is ${computerScore}`
     }
-    announceResults();
+    announceScore();
 }
 
 const scissors = document.querySelector("#scissors-button")
@@ -53,14 +52,17 @@ rock.addEventListener("click", () => {
     playRound("rock", computerSelection);
 })
 
-function announceResults() {
+const score = document.querySelector("#running-score")
+const finalScore = document.querySelector("#final-score")
+
+function announceScore() {
     if (roundsPlayed > 5) {
         if (playerScore > computerScore) {
-            alert(`You beat the computer ${playerScore} to ${computerScore}!`)
+            finalScore.textContent = `You beat the computer ${playerScore} to ${computerScore}!`
         } else if (computerScore > playerScore) {
-            alert(`You lost to the computer ${playerScore} to ${computerScore}!`)
+            finalScore.textContent = `You lost to the computer ${playerScore} to ${computerScore}!`
         } else if (computerScore == playerScore && (computerScore + playerScore !== 0)) {
-            alert(`It's a tie of ${playerScore} to ${computerScore}!`);
+            finalScore.textContent = `It's a tie of ${playerScore} to ${computerScore}!`;
         } else return;
     } else;
 };
