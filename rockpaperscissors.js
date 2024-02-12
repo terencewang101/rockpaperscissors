@@ -15,7 +15,7 @@ let playerScore = 0;
 let computerScore = 0;
 
 function playRound(playerSelection, computerSelection) {
-    playerSelection = prompt("Choose between rock, paper, or scissors!", "").toLowerCase();
+    // playerSelection = prompt("Choose between rock, paper, or scissors!", "").toLowerCase();
     if (playerSelection === "rock" && computerSelection === "scissors" ||
     playerSelection === "scissors" && computerSelection === "paper" ||
     playerSelection === "paper" && computerSelection === "rock") {
@@ -37,26 +37,48 @@ function playRound(playerSelection, computerSelection) {
     }
 }
 
-function isGameOver() {
+/*function isGameOver() {
     if (playerScore + computerScore < 5) {
         return "no";
     } else {
         return "yes";
     }
 }
+*/
+
+const scissors = document.querySelector("#scissors-button")
+scissors.addEventListener("click", () => {
+    playerSelection == "scissors";
+    playRound(playerSelection, computerSelection);
+})
+
+const paper = document.querySelector("#paper-button")
+paper.addEventListener("click", () => {
+    playerSelection == "paper";
+    playRound(playerSelection, computerSelection);
+})
+
+const rock = document.querySelector("#rock-button")
+rock.addEventListener("click", () => {
+    playerSelection == "rock";
+    playRound(playerSelection, computerSelection);
+})
 
 function game() {
+/*    playRound(playerSelection, computerSelection);
     playRound(playerSelection, computerSelection);
     playRound(playerSelection, computerSelection);
     playRound(playerSelection, computerSelection);
     playRound(playerSelection, computerSelection);
-    playRound(playerSelection, computerSelection);
+*/
     // Announce final score
     if (playerScore > computerScore) {
         alert(`You beat the computer ${playerScore} to ${computerScore}!`)
     } else if (computerScore > playerScore) {
         alert(`You lost to the computer ${playerScore} to ${computerScore}!`)
-    } else alert(`It's a tie of ${playerScore} to ${computerScore}!`);
+    } else if (computerScore == playerScore && (computerScore + playerScore !== 0)) {
+        alert(`It's a tie of ${playerScore} to ${computerScore}!`);
+    } else return;
 }
 game();
 
